@@ -1,6 +1,27 @@
-# Cahoots - Provider
+# Cahoots - Provider - Torial Sync
 
-Application for aggregating data from external data providers 
+Module which will sync the torial data with the internal torial provider storage continuously.
+
+## Usage example
+
+```js
+
+// Instantiate the sync mechanism (first run in `24h` by default).
+var torialsync = require('cahoots-provider-torial-sync')();
+
+// If you do not want to wait for the first interval, you can execute the sync mechanism directly via:
+torialsync.run();
+```
+
+## Configuration
+
+  * `CAHOOTS_PROVIDER_TORIAL_SYNC_INTERVAL`: The sync interval in ms. Default `(60 * 1000) * 60 * 24` (24h).
+
+## Test
+
+```sh
+npm test
+```
 
 ## License
 
