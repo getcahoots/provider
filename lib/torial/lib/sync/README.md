@@ -1,16 +1,18 @@
-# Cahoots - Provider - Torial Sync
+# Cahoots - Provider - torial sync
 
-Module which will sync the torial data with the internal torial provider storage continuously.
+Module which will sync the torial data (from the API) with an internal storage.
 
 ## Usage example
 
 ```js
 
-// Instantiate the sync mechanism (first run in `24h` by default).
-var torialsync = require('cahoots-provider-torial-sync')();
+var storage = require('cahoots-provider-torial-storage');
+var sync = require('cahoots-provider-torial-sync');
 
-// If you do not want to wait for the first interval, you can execute the sync mechanism directly via:
-torialsync.run();
+// Instantiate the sync mechanism.
+// The first run will be executed immediately. The next one will be scheduled (24h by default).
+sync(storage);
+
 ```
 
 ## Configuration
