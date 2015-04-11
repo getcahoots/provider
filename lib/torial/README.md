@@ -1,31 +1,29 @@
-# Cahoots - Provider - torial api
+# Cahoots - Provider - torial
 
-Abstraction from the [torial](https://www.torial.com/en/start) API.
+The torial provider module for the Cahoots provider application
 
 ## Usage example
 
 ```js
-var torial = require('cahoots-provider-torial-api');
+var torial = require('cahoots-provider-torial');
 
-var users = torial('users');
+var persons = torial('persons'); // or: 'organizations'
 
-function onFind (err, user) {
+function onFind (err, persons) {
 	if (err) {
-		return console.error('Meh! ' + err.toString());
+		return console.error('Meh!');
 	}
 
-	return user;
+	console.log(persons[0]);
 }
 
-users.findById(1, onFind);
-
+persons.query({id: 'André König'}, onFind);
 ```
 
-## Test
+## Configuration
 
-```sh
-npm test
-```
+  * `CAHOOTS_PROVIDER_TORIAL_DATABASE_PATH`: The path to the internal torial database.
+  * `CAHOOTS_PROVIDER_TORIAL_SYNC_INTERVAL`: The sync interval in ms. Default `(60 * 1000) * 60 * 24` (24h).
 
 ## License
 
