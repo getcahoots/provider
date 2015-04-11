@@ -17,7 +17,7 @@ function onFindAll (err, persons) {
 	console.log(persons); // Persons from all integrated providers
 }
 
-persons.findAll(onFindAll);
+person.findAll(onFindAll);
 ```
 
 ## Configuration
