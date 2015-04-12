@@ -13,4 +13,4 @@
 
 'use strict';
 
-module.exports = require('cahoots-provider-services');
+module.exports = require('./lib');
