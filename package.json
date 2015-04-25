@@ -1,19 +1,14 @@
 {
   "name": "@getcahoots/provider",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "The Cahoots data aggregation backbone which collects data from several providers.",
   "main": "index.js",
   "scripts": {
     "test": "gulp",
-    "lint": "gulp lint",
-    "specs": "gulp specs",
-    "checkstyle": "gulp checkstyle"
+    "lint": "gulp -- lint",
+    "specs": "gulp -- specs",
+    "checkstyle": "gulp -- checkstyle"
   },
-  "pre-commit": [
-    "lint",
-    "checkstyle",
-    "specs"
-  ],
   "engine": {
     "iojs": "^1.6.0"
   },
@@ -39,16 +34,14 @@
     "gulp-jshint": "^1.9.0",
     "gulp-mocha": "^2.0.0",
     "jshint-stylish": "^1.0.0",
-    "run-sequence": "^1.0.2",
-    "pre-commit": "^1.0.6"
+    "run-sequence": "^1.0.2"
   },
   "dependencies": {
-    "async-light": "^1.0.1",
-    "cahoots-provider-official": "^1.0.0-beta.1",
-    "cahoots-provider-torial": "^1.0.0-beta.6",
+    "@getcahoots/provider-official": "^1.0.0-beta.0",
+    "@getcahoots/provider-torial": "^1.0.0-beta.3",
     "debug": "^2.1.3",
-    "lodash.pluck": "^3.0.2",
     "mandatory": "^1.0.0",
+    "series": "^0.3.3",
     "verror": "^1.6.0"
   }
 }

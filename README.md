@@ -2,16 +2,23 @@
 
 Aggregating Cahoots data from several external data providers.
 
-## Providers
+## Available providers
 
+  * [cahoots.pw (official)](http://cahoots.pw)
   * [torial.com](http://torial.com)
+
+## Installation
+
+```sh
+npm i --save @getcahoots/provider
+```
 
 ## Usage example
 
 ```js
-var provider = require('cahoots-provider');
+var provider = require('@getcahoots/provider')();
 
-var person = provider('person'); // or 'person'
+var person = provider('person'); // or 'organization'
 
 function onQuery (err, persons) {
 	if (err) {
@@ -20,6 +27,8 @@ function onQuery (err, persons) {
 
 	console.log(persons); // Persons from all integrated providers
 }
+
+// Queries all available providers
 
 person.query({id: 1}, onQuery);
 ```
@@ -33,6 +42,24 @@ person.query({id: 1}, onQuery);
 
 ## API
 
+### Factory
+
+The factory provides an interface to interact with the underlying providers. This method can take a comma-separated list of provider names you want to interact with.
+
+```js
+
+// Interacting with all available providers
+var allProviders = require(@getcahoots/provider)();
+
+// Interacting with the `torial` provider
+var torial = require('@getcahoots/provider')('torial');
+
+// Interacting with the `official` (cahoots) and the `torial` providers
+var official = require('@getcahoots/provider')('official,torial');
+```
+
+Those provider modules ships with the a service factory interface (see below).
+
 ### PersonService
 
 #### `findAll(callback)`
@@ -40,7 +67,7 @@ person.query({id: 1}, onQuery);
 Finds all available persons from all integrated provider modules.
 
 ```js
-var service = services('person');
+var service = provider('person');
 
 function onFind (err, persons) {
     if (err) {
@@ -58,7 +85,7 @@ service.findAll(onFind);
 Find a person by a particular id (all provider modules will be queried).
 
 ```js
-var service = services('person');
+var service = provider('person');
 
 function onFind (err, person) {
     if (err) {
@@ -78,7 +105,7 @@ service.findById('f1000fa10c847b7599c9d0560d3d41e60b773164', onFind);
 Finds all available organizations from all integrated provider modules.
 
 ```js
-var service = services('organization');
+var service = provider('organization');
 
 function onFind (err, organizations) {
     if (err) {
@@ -96,7 +123,7 @@ service.findAll(onFind);
 Finds an organization by id (all provider modules will be queried).
 
 ```js
-var service = services('organization');
+var service = provider('organization');
 
 function onFind (err, organization) {
     if (err) {
@@ -114,7 +141,7 @@ service.findById('e76ca9f8359f31bd4a99e01465c44b1a8ce35c09', onFind);
 Finds multiple organizations by an array of organization id's.
 
 ```js
-var service = services('organization');
+var service = provider('organization');
 
 var ids = [
     'e76ca9f8359f31bd4a99e01465c44b1a8ce35c09',
