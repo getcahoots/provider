@@ -58,7 +58,7 @@ var torial = require('@getcahoots/provider')('torial');
 var official = require('@getcahoots/provider')('official,torial');
 ```
 
-Those provider modules ships with the a service factory interface (see below).
+Those provider modules ships with a service factory interface (see below).
 
 ### PersonService
 
