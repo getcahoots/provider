@@ -1,6 +1,6 @@
 {
   "name": "@getcahoots/provider",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "The Cahoots data aggregation backbone which collects data from several providers.",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "run-sequence": "^1.0.2"
   },
   "dependencies": {
-    "@getcahoots/provider-official": "^1.0.0-beta.1",
+    "@getcahoots/provider-official": "^1.0.0-beta.2",
     "@getcahoots/provider-torial": "^1.0.0-beta.4",
     "async-light": "^1.0.1",
     "async-series": "0.0.1",
