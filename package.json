@@ -1,6 +1,6 @@
 {
   "name": "@getcahoots/provider",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0",
   "description": "The Cahoots data aggregation backbone which collects data from several providers.",
   "main": "index.js",
   "scripts": {
