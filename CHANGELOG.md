@@ -1,4 +1,4 @@
-# UNRELEASED
+# 1.0.0 (2015-06-03)
 
   * a7e2cf4 feature: new lightweight integration of the `official` provider module
   * b8a7535 feature: new provider factory interface
